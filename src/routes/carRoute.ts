@@ -13,4 +13,9 @@ carRoute.route('/')
   .get((req, res) => controller.findAll(req, res))
   .post((req, res) => controller.add(req, res));
 
+carRoute.route('/:id')
+  .get((req, res) => controller.findOne(req, res))
+  .put((req, res) => controller.updateOne(req, res))
+  .delete((req, res) => controller.deleteOne(req, res));
+
 export default carRoute;
